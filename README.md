@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Project Overview
 
-## Getting Started
+Welcome to my portfolio showcasing a variety of projects and expertise in AI, web development, and user-centered design. Below, you’ll find detailed information about my professional journey, tools used, and innovative solutions developed to tackle real-world challenges. 🚀✨
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## About Me
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+I am a highly motivated AI professional and web developer with a passion for creating practical solutions that drive technological advancements. My expertise includes predictive modeling, natural language processing (NLP), and generative AI technologies. 🎯 As a proud graduate of the Machine Learning Cohort at Bangkit Academy, I have honed my skills in:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- TensorFlow 🤖
+- NLP 🧠📚
+- Computer Vision 👁️💻 
+- RecSys 🎯🔍
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+I thrive on transforming complex AI concepts into scalable, real-world applications while maintaining a strong commitment to innovation and problem-solving. 💡
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Key Skills 🛠️
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Artificial Intelligence:**
+  - Machine Learning
+  - Deep Learning 💥  
+  - Generative AI 🧠  
+  - Recommendation Systems 🎯
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Web Development:**  
+  - Next.js ⚡  
+  - Tailwind CSS 🎨  
+  - Firebase 🔥
 
-## Deploy on Vercel
+- **Soft Skills:**  
+  - Problem-solving 💡  
+  - Collaboration 🤝  
+  - Continuous learning mindset 📚
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Highlights 🌟
+
+### Achievements 🏆:
+- Graduated from Bangkit Academy Machine Learning Cohort 🎓  
+- Completed DeepLearning.AI’s Mathematics for Machine Learning and Data Science Specialization 🧑‍🏫  
+- Built and deployed AI models using Vertex AI 🚀
+
+---
+
+## Future Goals 🎯
+
+- **AI Specialization:**  
+  - Expanding expertise in Natural Language Processing (NLP) and advanced AI techniques 🤖🧠
+
+- **Business Development:**  
+  - Establishing a startup leveraging AI to create impactful solutions 💼🚀
+
+- **Skill Expansion:**  
+  - Learning Flutter to broaden mobile development capabilities 📱
+
+---
+
+## Connect with Me 🌍
+
+- [LinkedIn](https://www.linkedin.com/in/danang-hapis-fadillah-682878202/) 🌐  
+- [GitHub](https://github.com/n0yy) 💻  
+- [Portfolio Website](https://hapeace.vercel.app) 🌟  
+
+Let’s collaborate to build the future with AI and innovation! 🚀✨
