@@ -37,16 +37,24 @@ export default function Contact() {
         <br />
         and Build the Future Together
       </h1>
-      <motion.button
-        className={`px-7 py-1 rounded-full mt-10`}
-        style={{ border }}
-        whileHover={{ 
-          scale: 1.05, 
-          transition: { duration: 0.2 },
+      <Link 
+      href="mailto:danangpostman37@gmail.com"
+      className=" mt-10 no-underline hover:no-underline"
+    >
+      <motion.div
+        className="items-center gap-2 text-current inline-block px-7 py-1 rounded-full cursor-pointer"
+        style={{
+          border,
         }}
+        whileHover={{ 
+          scale: 1.05,
+          transition: { duration: 0.2 }
+        }}
+        whileTap={{ scale: 0.95 }}
       >
-        Send Mail
-      </motion.button>
+        <span>Send Mail</span>
+      </motion.div>
+    </Link>
       <span className="px-3 my-5">OR</span>
       {/* Social Media */}
       <div className="flex space-x-5 text-white items-center">
