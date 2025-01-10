@@ -9,7 +9,7 @@ interface StarsMotionProps {
 
 export default function StarsMotion({ count, speed, radius }: StarsMotionProps) {
     return (
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 -z-50">
         <Canvas>
             <Stars radius={radius} count={count} factor={4} fade speed={speed} />
         </Canvas>
