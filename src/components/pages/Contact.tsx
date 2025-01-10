@@ -33,7 +33,7 @@ export default function Contact() {
   return (
     <motion.main className="relative pt-10 md:pt-28 min-h-screen flex flex-col items-center justify-center md:justify-start 2xl:justify-center 2xl:pb-24 overflow-hidden pb-28 md:pb-0 bg-gray-950 text-gray-200 z-10">
       <h1 className="text-5xl md:text-7xl w-11/12 md:w-8/12 font-semibold text-center">
-        <motion.span style={{textShadow}}>Let's Connect</motion.span>
+        <motion.span style={{textShadow}}>Let&apos;s Connect</motion.span>
         <br />
         and Build the Future Together
       </h1>

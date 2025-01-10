@@ -45,7 +45,7 @@ export default function Home() {
           </h1>
           <div>
           <div className="mt-4">
-            <p className="max-w-[12rem] text-base leading-relaxed md:text-lg md:leading-relaxed border-b">
+            <p className="max-w-full text-base leading-relaxed md:text-lg md:leading-relaxed border-b">
               <span className="font-bold font-sans">/ ROLES :</span> {" "}
               <AnimatePresence mode="wait">
                 <motion.span

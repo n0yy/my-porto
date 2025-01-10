@@ -1,6 +1,6 @@
 "use client"
 
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect } from "react";
 import { animate, useMotionValue, MotionValue } from "framer-motion";
 
 const COLORS = ["#01EFAC", "#01CBAE", "#2082A6", "#524096", "#5F2A84", "#FF1684"]
