@@ -144,7 +144,7 @@ export default function Projects() {
                                         ))}
                                     </motion.div>
                                 </div>
-                                <Link href={`/projects/${currentIndex+1}`}>
+                                <Link href={`/projects/${projects[currentIndex].slug}`}>
                                 <motion.button 
                                     className="bg-white text-gray-950 mx-6 mb-6 text-sm px-4 py-2 rounded-full hover:bg-gray-100 transition-colors"
                                     whileHover={{ scale: 1.05 }}
