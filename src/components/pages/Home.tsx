@@ -34,8 +34,9 @@ export default function Home() {
         style={{
           backgroundImage,
         }}
-        className="relative grid min-h-screen overflow-hidden bg-gray-950 px-4 text-gray-200"
+        className="relative grid min-h-screen overflow-hidden bg-gray-950 px-4 text-gray-200 z-10"
       >
+
         <div className="relative z-10 flex flex-col items-center pb-10 md:pb-10 2xl:pb-24 justify-center px-7 md:px-0">
           <span className="mb-1.5 inline-block rounded-full bg-gray-600/50 px-3 py-1.5 text-sm">
             Danang Hapis Fadillah
@@ -82,8 +83,8 @@ export default function Home() {
             <FiArrowRight className="transition-transform group-hover:-rotate-45 group-active:-rotate-12" />
           </motion.div>
         </div>
+        <StarsMotion count={100} speed={0.5} radius={50} /> 
         
-        <StarsMotion count={750} speed={1} radius={75} /> 
       </motion.main>
     )
   

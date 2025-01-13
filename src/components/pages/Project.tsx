@@ -5,6 +5,7 @@ import { motion, AnimatePresence, useMotionTemplate } from 'framer-motion';
 import { projects } from "@/DataProjects";
 import { useColor } from '@/context/Colors';
 import StarsMotion from '@/components/Stars';
+import Link from 'next/link';
 
 export default function Projects() {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -61,7 +62,7 @@ export default function Projects() {
     return (
         <motion.main
             style={{backgroundImage}} 
-            className="relative pt-10 md:pt-16 2xl:pt-56 min-h-screen overflow-hidden bg-gray-950 text-gray-200">
+            className="relative pt-10 md:pt-16 2xl:pt-56 min-h-screen overflow-hidden bg-gray-950 text-gray-200 z-10">
             <div className="max-w-2xl mx-auto text-center">
                 <motion.h1 
                     className="mb-2 inline-block rounded-full bg-white/20 outline outline-[1px] px-4 py-1 text-sm"
@@ -143,20 +144,23 @@ export default function Projects() {
                                         ))}
                                     </motion.div>
                                 </div>
+                                <Link href={`/projects/${currentIndex+1}`}>
                                 <motion.button 
                                     className="bg-white text-gray-950 mx-6 mb-6 text-sm px-4 py-2 rounded-full hover:bg-gray-100 transition-colors"
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
+                                    
                                 >
                                     See more
                                 </motion.button>
+                                </Link>
                             </motion.div>
                         </div>
                     </motion.div>
                 </AnimatePresence>
 
                 {/* Navigation dots */}
-                <div className="absolute bottom-14 left-1/2 transform -translate-x-1/2 flex gap-2 mb-4">
+                <div className="absolute bottom-12 md:bottom-14 left-1/2 transform -translate-x-1/2 flex gap-2 mb-4">
                     {projects.map((_, index) => (
                         <button
                             key={index}
