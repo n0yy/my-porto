@@ -23,10 +23,4 @@ export const projects = [
         "tags": ["XGBoost", "Traffic Prediction", "Machine Learning", "Python"],
         "slug": "traffic-congestion-prediction-model"
     },
-    {
-        "title": "Sentiment Analysis on Mobile Bea Cukai App",
-        "description": "Performed sentiment analysis on Google Play Store reviews using IndoBERT, identifying common complaints for actionable insights.",
-        "tags": ["IndoBERT", "NLP", "Sentiment Analysis", "Google Play Store"],
-        "slug": "sentiment-analysis-on-mobile-bea-cukai-app"
-    }
 ]

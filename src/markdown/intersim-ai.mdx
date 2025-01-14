@@ -1,0 +1,81 @@
+# 🌟 From Data to Deployment: My Role as a Machine Learning Engineer in InterSim Project
+
+**🚀 Tags:** BERT, IntersimQS, LLaMA-3.2, HuggingFace, FastAPI, Capstone Project
+
+---
+
+### 🧐 **Overview**
+
+InterSim was not just a capstone project—it was a **mission**. 🎯 The goal? To empower job seekers, especially fresh graduates, by equipping them with the tools to ace job interviews. 💼 As a **Machine Learning Engineer**, I contributed to transforming an ambitious idea into a functional **AI-driven platform** that simplifies interview preparation. Here's how I made it happen:
+
+---
+
+### 📊 **Step 1: Data Collection and Preprocessing**
+
+![Scrapping Data Job in Glints using Automa](/scrap.PNG)
+
+Everything starts with **data**. 🗂️ My first task was to scrape job descriptions and resumes using **Automa**. This process involved navigating structured and unstructured data sources to create a robust dataset. Once collected:
+
+- 🧹 I cleaned and preprocessed the data.
+- 🔍 Ensured that it was ready for embedding and model training.
+
+This foundational step laid the groundwork for the platform's functionality. 🏗️
+
+---
+
+### 🧠 **Step 2: Embedding Data and Calculating Similarity**
+
+![Calc Similarity](/calc_simil.png)
+
+To provide a **personalized interview experience**, I implemented a custom **JobSimilarityModel** using **BERT** (Bidirectional Encoder Representations from Transformers). Here's how it worked:
+
+- **🔗 Tokenization and Embedding Generation:**
+  Using BERT's tokenizer and pre-trained model, I processed job descriptions into embeddings that capture their semantic meaning. This step leveraged **batch processing** to optimize performance. 🏎️
+
+- **📐 Similarity Calculation:**
+  The **cosine similarity** metric was applied to measure the relevance between a user's profile and various job descriptions. For example, the model could identify the **top 10 job roles** most similar to a given user profile by comparing embeddings. 🎯
+
+The implementation combined the **precision of BERT** with scalable batch processing to produce meaningful similarity scores. This feature powered InterSim's **question-generation system**, providing tailored interview questions based on job descriptions. 🤖💬
+
+---
+
+### 🔧 **Step 3: Fine-Tuning the Model**
+
+![Tuning model](/tuning.PNG)
+
+The heart of InterSim lies in its **AI model**. 🫀 Using **LLaMA-3.2-8B**, I fine-tuned the model with a dataset formatted in **Alpaca style**. Here's what I achieved:
+
+- 🔄 **Trained the model for 60 epochs** with rigorous optimization.
+- 📉 Achieved a **training loss of 0.22**, a testament to its accuracy and effectiveness. ✅
+
+This fine-tuned model became the brain behind InterSim's personalized interview question generator. 🧠✨
+
+---
+
+### 🖧 **Step 4: Building Scalable Infrastructure**
+
+![Model Uploaded](/hf.PNG)
+
+Creating a powerful AI model is just the beginning; making it accessible to users is the real challenge. 🏗️ Here's what I did:
+
+- ☁️ Uploaded the fine-tuned model to **HuggingFace**.
+- 🌐 Designed a scalable **RESTful API** using **FastAPI** to serve as the bridge between our backend services and the user-facing mobile app. 📱
+
+This ensured that the model was **always available, reliable, and ready to serve users** anytime, anywhere. 🌍⚡
+
+---
+
+### 🛠️ **Technologies Behind the Scenes**
+
+Throughout the project, I worked with cutting-edge tools and technologies, including:
+
+- 🧑‍💻 **Machine Learning Tools:** PyTorch, Unsloth, HuggingFace, BERT, LLaMA.
+- 🔧 **Development Frameworks:** FastAPI, Docker.
+
+---
+
+### 🌐 **Here's Our Work**
+
+📂 [GitHub Repository](https://github.com/InterSim-lab)
+
+Feel free to explore our code and learn more about the project! 👩‍💻👨‍💻

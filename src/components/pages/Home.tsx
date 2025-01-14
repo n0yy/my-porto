@@ -79,7 +79,7 @@ export default function Home() {
             }}
             className="group relative flex w-fit items-center gap-1.5 rounded-full bg-gray-950/10 px-4 py-2 text-gray-50 transition-colors hover:bg-gray-950/50 cursor-pointer"
           >
-            <Link href="/resume.pdf" target="_blank">See Resume</Link>
+            <Link href="/Danang's Resume.pdf" target="_blank">See Resume</Link>
             <FiArrowRight className="transition-transform group-hover:-rotate-45 group-active:-rotate-12" />
           </motion.div>
         </div>
