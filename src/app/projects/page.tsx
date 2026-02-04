@@ -20,12 +20,12 @@ export const metadata: Metadata = {
     title: "Projects",
     description:
       "Showcasing a continuous journey in web development and AI, featuring innovative solutions in technology and design.",
-    url: "https://hapeace.vercel.app/projects",
+    url: "https://dananghapis.dev/projects",
     images: [
       {
-        url: "https://hapeace.vercel.app/og-projects.png",
-        width: 800,
-        height: 600,
+        url: "/og-projects.png", // Simplified path, metadataBase will handle it
+        width: 1200,
+        height: 630,
         alt: "Projects Overview - Danang Hapis Fadillah",
       },
     ],
@@ -35,12 +35,6 @@ export const metadata: Metadata = {
     title: "Projects - Danang Hapis Fadillah",
     description:
       "Discover projects that demonstrate advanced skills in AI and web development. A showcase of innovation and creativity.",
-    images: [
-      {
-        url: "https://hapeace.vercel.app/og-projects.png",
-        alt: "Projects Overview - Danang Hapis Fadillah",
-      },
-    ],
   },
 };
 
