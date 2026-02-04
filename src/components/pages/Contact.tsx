@@ -1,10 +1,12 @@
 "use client";
 
-import StarsMotion from "@/components/Stars";
 import { useColor } from "@/context/Colors";
 import { useMotionTemplate, motion } from "framer-motion";
 import Image from "next/image";
+import dynamic from 'next/dynamic';
 import Link from "next/link";
+
+const StarsMotion = dynamic(() => import("@/components/Stars"), { ssr: false });
 
 const socialMedia = [
   {
@@ -33,28 +35,28 @@ export default function Contact() {
   return (
     <motion.main className="relative pt-10 md:pt-28 min-h-screen flex flex-col items-center justify-center md:justify-start 2xl:justify-center 2xl:pb-24 overflow-hidden pb-28 md:pb-0 bg-gray-950 text-gray-200 z-10">
       <h1 className="text-5xl md:text-7xl w-11/12 md:w-8/12 font-semibold text-center">
-        <motion.span style={{textShadow}}>Let&apos;s Connect</motion.span>
+        <motion.span style={{ textShadow }}>Let&apos;s Connect</motion.span>
         <br />
         and Build the Future Together
       </h1>
-      <Link 
-      href="mailto:danangpostman37@gmail.com"
-      className=" mt-10 no-underline hover:no-underline"
-    >
-      <motion.div
-        className="items-center gap-2 text-current inline-block px-7 py-1 rounded-full cursor-pointer"
-        style={{
-          border,
-        }}
-        whileHover={{ 
-          scale: 1.05,
-          transition: { duration: 0.2 }
-        }}
-        whileTap={{ scale: 0.95 }}
+      <Link
+        href="mailto:danangpostman37@gmail.com"
+        className=" mt-10 no-underline hover:no-underline"
       >
-        <span>Send Mail</span>
-      </motion.div>
-    </Link>
+        <motion.div
+          className="items-center gap-2 text-current inline-block px-7 py-1 rounded-full cursor-pointer"
+          style={{
+            border,
+          }}
+          whileHover={{
+            scale: 1.05,
+            transition: { duration: 0.2 }
+          }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <span>Send Mail</span>
+        </motion.div>
+      </Link>
       <span className="px-3 my-5">OR</span>
       {/* Social Media */}
       <div className="flex space-x-5 text-white items-center">

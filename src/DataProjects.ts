@@ -1,5 +1,29 @@
 export const projects = [
     {
+        "title": "Agentic Xtractor - SimplifyAI",
+        "description": "Developed an Agentic AI pipeline to automate structured data extraction from complex engineering PDFs. Leverages LangGraph and Qdrant for 90% extraction accuracy.",
+        "tags": ["LangGraph", "Qdrant", "Python", "FastAPI", "Agentic AI", "SimplifyAI"],
+        "slug": "agentic-xtractor"
+    },
+    {
+        "title": "BEJO App - Modular RAG System",
+        "description": "Built a production-ready RAG system with FastAPI, Next.js, and Qdrant. Supports dynamic agent routing and local deployment via Ollama (Qwen & Nomic).",
+        "tags": ["FastAPI", "NextJS", "Qdrant", "Ollama", "LangGraph", "Generative AI"],
+        "slug": "bejo-app-rag-system"
+    },
+    {
+        "title": "Predictive Maintenance System",
+        "description": "Implemented a multivariate time series classification system using LightGBM to predict equipment leaks and failures. Includes a real-time Streamlit dashboard.",
+        "tags": ["LightGBM", "Time Series", "Machine Learning", "Streamlit", "Python"],
+        "slug": "predictive-maintenance-system"
+    },
+    {
+        "title": "GEMASTIK 2024 - Sentiment Analysis",
+        "description": "Performed sentiment analysis on Google Play Store reviews using IndoBERT, providing insights for Mobile Bea Cukai app improvement.",
+        "tags": ["IndoBERT", "NLP", "Sentiment Analysis", "Python", "GEMASTIK"],
+        "slug": "gemastik-2024-sentiment-analysis"
+    },
+    {
         "title": "From Fundamentals to Generative AI Excellence",
         "description": "Machine Learning Cohort at Bangkit Academy (Batch 2) - Led by Google, Tokopedia, Gojek, and Traveloka",
         "tags": ["Machine Learning", "Deep Learning", "NLP", "Generative AI", "Computer Vision", "Tensorflow"],

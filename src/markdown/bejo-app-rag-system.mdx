@@ -1,0 +1,32 @@
+# 🦅 BEJO App: A Modular & Scalable RAG System
+
+**🚀 Tags:** FastAPI, NextJS, Qdrant, Ollama, LangGraph, Generative AI
+
+---
+
+### 🧐 **Overview**
+**BEJO App** is a Retrieval-Augmented Generation (RAG) system built to handle contextual question-answering for enterprise documents. It bridges the gap between high-performance proprietary models and privacy-focused local deployment.
+
+---
+
+### 🛠️ **System Architecture**
+- **Frontend:** Built with **Next.js**, **Shadcn/UI**, and **Firebase** for a modern, responsive user experience.
+- **Backend:** A robust **FastAPI** service managing document ingestion and chat threads.
+- **Agent Routing:** Integrated **LangGraph** to dynamically route queries based on context.
+- **Vector Store:** **Qdrant** provides efficient semantic search capabilities.
+
+---
+
+### 🌐 **Hybrid Deployment**
+During development, the system utilized **Gemini 2.0 Flash** and `text-embedding-004`. For production environments requiring local data handling, I implemented a switch to:
+- **Embedding:** `nomic-embed-text`
+- **LLM:** `Qwen` (via **Ollama**)
+
+This ensures the system is flexible, scalable, and capable of running in various infrastructure setups.
+
+---
+
+### 🚀 **Key Features**
+- **📂 Smart Embedding:** `/upload?embed=true` endpoint for automated file processing.
+- **💬 Contextual Chat:** `/chat/{thread_id}` for persistent, document-aware conversations.
+- **🔍 Precision Search:** Semantic retrieval that finds exactly what you need.
