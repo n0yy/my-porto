@@ -12,7 +12,7 @@ export default function Navbar() {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.2 }}
-      className="fixed z-50 top-6 inset-x-0 mx-auto w-fit md:inset-x-auto md:mx-0 md:left-10 md:top-10 bg-white/5 px-6 md:px-10 py-3 md:py-4 rounded-full shadow-lg backdrop-blur-md border border-white/10"
+      className="fixed z-50 top-6 inset-x-0 mx-auto w-fit md:inset-x-auto md:mx-0 md:left-10 md:top-10 bg-white/5 px-6 md:px-10 py-3 md:py-4 rounded-full shadow-lg backdrop-blur-md border border-white/10 scale-90 md:scale-100"
     >
       <ul className="flex items-center space-x-6 text-sm md:text-base font-medium uppercase tracking-widest text-gray-400">
         <li>
