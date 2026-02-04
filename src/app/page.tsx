@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
 import Home from "@/components/pages/Home";
+import About from "@/components/pages/About";
+import Projects from "@/components/pages/Project";
+import Contact from "@/components/pages/Contact";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Danang Hapis Fadillah | AI Engineer",
@@ -21,5 +25,21 @@ export const metadata: Metadata = {
 }
 
 export default function Page() {
-  return <Home />
+  return (
+    <div className="flex flex-col">
+      <section id="home">
+        <Home />
+      </section>
+      <section id="about">
+        <About />
+      </section>
+      <section id="projects">
+        <Projects />
+      </section>
+      <section id="contact">
+        <Contact />
+      </section>
+      <Footer />
+    </div>
+  )
 }

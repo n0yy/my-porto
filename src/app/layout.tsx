@@ -1,10 +1,11 @@
-import { Syne } from "next/font/google";
+import { Syne, Outfit } from "next/font/google";
 import "./globals.css";
 import { ColorProvider } from "../context/Colors";
 import Navbar from "../components/Navbar";
 import { Metadata } from 'next';
 
-const syne = Syne({ subsets: ["latin"], weight: ["400", "500", "600", "800"] });
+const syne = Syne({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800"], variable: '--font-syne' });
+const outfit = Outfit({ subsets: ["latin"], weight: ["300", "400", "500", "600"], variable: '--font-outfit' });
 
 export const metadata: Metadata = {
   title: "Danang Hapis Fadillah | AI Engineer Portfolio",
@@ -24,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${syne.className} antialiased`}
+        className={`${syne.variable} ${outfit.variable} font-sans antialiased`}
       >
         <ColorProvider>
           {children}
