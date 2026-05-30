@@ -8,15 +8,15 @@ import { FiArrowLeft, FiArrowRight, FiArrowUpRight } from "react-icons/fi"
 import { projects } from "@/DataProjects"
 
 const visualMap: Record<string, string> = {
-  "agentic-xtractor": "/scrap.PNG",
-  "bejo-app-rag-system": "/calc_simil.png",
-  "predictive-maintenance-system": "/tuning.PNG",
+  "agentic-xtractor": "/xtractor.png",
+  "bejo-app-rag-system": "/bejo.png",
+  "predictive-maintenance-system": "/predictive.png",
   "gemastik-2024-sentiment-analysis": "/ristek.PNG",
   "from-fundamentals-to-generative-ai-excellence": "/bangkit.jfif",
   "developed-a-nextjs-application-integrating-llm": "/og-projects.PNG",
   "intersim-ai": "/hf.PNG",
   "traffic-congestion-prediction-model": "/og-home.PNG",
-  "sdlc-ai": "/og-about.PNG",
+  "sdlc-ai": "/sdlc-ai.png",
 }
 
 export default function Projects() {

@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <main className="relative min-h-screen overflow-hidden pb-20 pt-28 md:pt-32">
       <div className="od-container">
-        <div className="grid min-h-[calc(100vh-9rem)] gap-10 pb-8 md:grid-cols-[1.32fr_0.68fr] md:items-start md:gap-12">
+        <div className="grid min-h-[calc(100vh-9rem)] gap-10 pb-8 md:grid-cols-[0.96fr_1.04fr] md:items-start md:gap-14 lg:grid-cols-[0.9fr_1.1fr]">
           <motion.section
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
@@ -28,11 +28,11 @@ export default function Home() {
                 <p className="eyebrow">AI engineer / product systems</p>
               </div>
 
-              <h1 className="poster-title max-w-[880px] text-[clamp(4.8rem,11.8vw,12rem)] leading-[0.78]">
+              <h1 className="poster-title max-w-[720px] text-[clamp(3.8rem,9vw,8.4rem)] leading-[0.82]">
                 Build AI that feels <span className="serif-ish lowercase">alive</span>, legible, and useful.
               </h1>
 
-              <p className="mt-7 max-w-[620px] text-lg leading-8 text-[rgba(23,21,16,0.68)] md:text-xl">
+              <p className="mt-7 max-w-[560px] text-lg leading-8 text-[rgba(23,21,16,0.68)] md:text-xl">
                 I am Danang Hapis Fadillah, an AI Engineer at SimplifyAI Indonesia crafting agentic workflows,
                 retrieval systems, and production interfaces for teams that need AI to become a real operating layer.
               </p>
@@ -58,7 +58,7 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.94, rotate: -1 }}
             animate={{ opacity: 1, scale: 1, rotate: 0 }}
             transition={{ duration: 0.75, delay: 0.1, ease: [0.2, 0, 0, 1] }}
-            className="relative mx-auto mt-1 aspect-[0.84] w-full max-w-[460px] md:mt-12"
+            className="relative mx-auto mt-1 aspect-[0.84] w-full max-w-[560px] md:mt-8 md:justify-self-end"
           >
             <div className="absolute inset-0 overflow-hidden border border-[rgba(23,21,16,0.17)] bg-[#f2ead8]">
               <Image
