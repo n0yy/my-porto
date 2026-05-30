@@ -72,7 +72,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${syne.variable} ${outfit.variable} ${archivoBlack.variable} font-sans antialiased`}
+        className={`${syne.variable} ${outfit.variable} ${archivoBlack.variable} font-sans antialiased mx-5 md:mx-0`}
       >
         <Script
           id="json-ld"

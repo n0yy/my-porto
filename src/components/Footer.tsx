@@ -12,7 +12,7 @@ export default function Footer() {
     const currentYear = new Date().getFullYear()
 
     return (
-        <footer className="bg-[#171510] py-14 text-[#f7eed9]">
+        <footer className="bg-[#171510] py-14 text-[#f7eed9] px-3">
             <div className="od-container">
                 <div className="grid gap-12 md:grid-cols-[1.2fr_1.8fr]">
                     <div>
