@@ -1,247 +1,142 @@
 "use client"
 
-import React, { useEffect, useState } from 'react';
-import { motion, AnimatePresence, useMotionTemplate } from 'framer-motion';
-import { projects } from "@/DataProjects";
-import { useColor } from '@/context/Colors';
-import dynamic from 'next/dynamic';
-import Link from 'next/link';
-import { FiArrowRight } from 'react-icons/fi';
-import { SiPython, SiNextdotjs, SiReact, SiTypescript, SiTailwindcss, SiFastapi, SiFirebase, SiLangchain, SiStreamlit, SiTensorflow, SiHuggingface, SiMeta, SiGoogle, SiKeras, SiPytorch, SiScikitlearn, SiNvidia, SiDocker, SiKubernetes, SiLinux } from 'react-icons/si';
-import { FaDatabase, FaBrain, FaRobot, FaChartLine, FaEye, FaLayerGroup, FaCloud, FaCode, FaMicrochip } from 'react-icons/fa';
+import { useMemo, useState } from "react"
+import Image from "next/image"
+import Link from "next/link"
+import { AnimatePresence, motion } from "framer-motion"
+import { FiArrowLeft, FiArrowRight, FiArrowUpRight } from "react-icons/fi"
+import { projects } from "@/DataProjects"
 
-const StarsMotion = dynamic(() => import("@/components/Stars"), { ssr: false });
+const visualMap: Record<string, string> = {
+  "agentic-xtractor": "/scrap.PNG",
+  "bejo-app-rag-system": "/calc_simil.png",
+  "predictive-maintenance-system": "/tuning.PNG",
+  "gemastik-2024-sentiment-analysis": "/ristek.PNG",
+  "from-fundamentals-to-generative-ai-excellence": "/bangkit.jfif",
+  "developed-a-nextjs-application-integrating-llm": "/og-projects.PNG",
+  "intersim-ai": "/hf.PNG",
+  "traffic-congestion-prediction-model": "/og-home.PNG",
+  "sdlc-ai": "/og-about.PNG",
+}
 
 export default function Projects() {
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const [direction, setDirection] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const featured = projects[currentIndex]
+  const image = visualMap[featured.slug] ?? "/og-projects.PNG"
 
-    const slideVariants = {
-        enter: (direction: number) => ({
-            x: direction > 0 ? 100 : -100,
-            opacity: 0,
-            scale: 0.9
-        }),
-        center: {
-            zIndex: 1,
-            x: 0,
-            opacity: 1,
-            scale: 1
-        },
-        exit: (direction: number) => ({
-            zIndex: 0,
-            x: direction < 0 ? 100 : -100,
-            opacity: 0,
-            scale: 0.9
-        })
-    };
+  const archive = useMemo(() => projects.slice(0, 5), [])
 
-    const nextProject = () => {
-        setDirection(1);
-        setCurrentIndex((prev) => (prev + 1) % projects.length);
-    }
+  const nextProject = () => setCurrentIndex((prev) => (prev + 1) % projects.length)
+  const prevProject = () => setCurrentIndex((prev) => (prev === 0 ? projects.length - 1 : prev - 1))
 
-    const prevProject = () => {
-        setDirection(-1);
-        setCurrentIndex((prev) => (prev === 0 ? projects.length - 1 : prev - 1));
-    }
+  return (
+    <main className="section-rule py-20 md:py-28">
+      <div className="od-container">
+        <div className="mb-12 grid gap-8 md:grid-cols-[0.95fr_1.05fr] md:items-end">
+          <div>
+            <p className="eyebrow mb-5">03 / Work archive</p>
+            <h2 className="poster-title text-[clamp(3.6rem,8vw,7.6rem)] leading-[0.82]">
+              AI systems with receipts, interfaces, and <span className="serif-ish lowercase">working edges</span>.
+            </h2>
+          </div>
+          <p className="max-w-xl text-lg leading-8 text-[rgba(23,21,16,0.66)]">
+            Selected work across agentic extraction, modular RAG, interview simulation, predictive maintenance,
+            sentiment analysis, and SDLC-focused AI. The common thread: make intelligence inspectable.
+          </p>
+        </div>
 
-    const color = useColor();
-    const border = useMotionTemplate`1px solid ${color}`;
-
-    return (
-        <motion.main
-            className="relative min-h-screen overflow-hidden bg-gray-950 text-gray-200 flex flex-col justify-center py-20"
-        >
-            {/* Background "Design & Code" Text */}
-            <div className="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none select-none overflow-hidden">
-                <span className="text-[15vw] md:text-[20vw] font-bold whitespace-nowrap leading-none italic font-serif" style={{ transform: "rotate(-10deg)" }}>
-                    Design & Code
-                </span>
+        <div className="grid gap-7 md:grid-cols-[0.82fr_1.18fr]">
+          <section className="border border-[rgba(23,21,16,0.16)] bg-[#f2ead8]/42 p-6 md:p-8">
+            <div className="mb-8 flex items-center justify-between border-b border-[rgba(23,21,16,0.14)] pb-4">
+              <p className="eyebrow">Featured case</p>
+              <p className="font-mono text-sm text-[#df5b43]">{String(currentIndex + 1).padStart(2, "0")}</p>
             </div>
 
-            <div className="max-w-7xl mx-auto px-6 w-full relative z-10 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-                {/* Left Content */}
-                <div className="order-2 md:order-1">
-                    <motion.h2
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        key={currentIndex + "title"}
-                        className="text-4xl md:text-6xl font-bold mb-4"
-                    >
-                        {projects[currentIndex].title}
-                    </motion.h2>
-                    <motion.p
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        key={currentIndex + "desc"}
-                        className="text-gray-400 text-lg mb-8 max-w-lg leading-relaxed"
-                    >
-                        {projects[currentIndex].description}
-                    </motion.p>
-
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        key={currentIndex + "tags"}
-                        className="flex flex-wrap gap-2 mb-8"
-                    >
-                        {projects[currentIndex].tags.map(tag => (
-                            <span key={tag} className="border border-white/20 px-3 py-1 rounded-full text-xs uppercase tracking-widest text-gray-300">
-                                {tag}
-                            </span>
-                        ))}
-                    </motion.div>
-
-                    <div className="flex gap-4">
-                        <Link href={`/projects/${projects[currentIndex].slug}`}>
-                            <motion.button
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                className="bg-white text-black px-8 py-3 rounded-full font-bold flex items-center gap-2"
-                            >
-                                View Project <FiArrowRight />
-                            </motion.button>
-                        </Link>
-
-                        <div className="flex gap-2">
-                            <button onClick={prevProject} className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors">
-                                ←
-                            </button>
-                            <button onClick={nextProject} className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors">
-                                →
-                            </button>
-                        </div>
-                    </div>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={featured.slug}
+                initial={{ opacity: 0, y: 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -14 }}
+                transition={{ duration: 0.28 }}
+              >
+                <h3 className="mb-5 text-4xl font-black leading-none tracking-[-0.055em] md:text-5xl">{featured.title}</h3>
+                <p className="mb-7 text-base leading-7 text-[rgba(23,21,16,0.66)]">{featured.description}</p>
+                <div className="mb-8 flex flex-wrap gap-2">
+                  {featured.tags.slice(0, 6).map((tag) => (
+                    <span key={tag} className="border border-[rgba(23,21,16,0.18)] px-3 py-1 font-mono text-[10px] uppercase tracking-[0.14em]">
+                      {tag}
+                    </span>
+                  ))}
                 </div>
+                <Link
+                  href={`/projects/${featured.slug}`}
+                  className="inline-flex items-center gap-2 bg-[#171510] px-5 py-3 text-sm font-bold text-[#f7eed9] transition-transform hover:-translate-y-0.5"
+                >
+                  Read case notes <FiArrowUpRight />
+                </Link>
+              </motion.div>
+            </AnimatePresence>
 
-                {/* Right Content as Card */}
-                <div className="order-1 md:order-2 flex justify-center">
-                    <AnimatePresence mode="wait" custom={direction}>
-                        <motion.div
-                            key={currentIndex}
-                            custom={direction}
-                            variants={slideVariants}
-                            initial="enter"
-                            animate="center"
-                            exit="exit"
-                            transition={{ duration: 0.4 }}
-                            className="bg-gray-900 border border-white/10 p-10 rounded-3xl w-full max-w-md aspect-square flex flex-col justify-center items-center text-center shadow-2xl relative"
-                        >
-                            <div className="absolute top-6 right-6 w-3 h-3 rounded-full bg-red-500"></div>
-                            <div className="absolute top-6 right-10 w-3 h-3 rounded-full bg-yellow-500"></div>
-                            <div className="absolute top-6 right-14 w-3 h-3 rounded-full bg-green-500"></div>
-
-                            <div className="relative w-72 h-72 flex items-center justify-center mb-6">
-                                {/* Orbit Ring */}
-                                <div className="absolute inset-0 border border-dashed border-gray-700 rounded-full"></div>
-
-                                {/* Orbiting Icons/Tags */}
-                                <motion.div
-                                    animate={{ rotate: 360 }}
-                                    transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-                                    className="absolute inset-0 w-full h-full"
-                                >
-                                    {projects[currentIndex].tags.filter(isTechTool).slice(0, 8).map((tag, i, arr) => {
-                                        const total = arr.length;
-                                        const radius = 144; // Half of w-72 (288px) to place icons on the orbit ring
-                                        const angle = (i * 360) / total;
-                                        const x = radius * Math.cos((angle * Math.PI) / 180);
-                                        const y = radius * Math.sin((angle * Math.PI) / 180);
-
-                                        return (
-                                            <div
-                                                key={i}
-                                                style={{
-                                                    position: 'absolute',
-                                                    left: `calc(50% + ${x}px)`,
-                                                    top: `calc(50% + ${y}px)`,
-                                                    transform: 'translate(-50%, -50%)',
-                                                }}
-                                            >
-                                                <motion.div
-                                                    animate={{ rotate: -360 }}
-                                                    transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-                                                    className="relative group"
-                                                >
-                                                    <div className="bg-gray-800 p-3 rounded-full border border-gray-600 shadow-lg text-white hover:scale-125 transition-transform hover:border-blue-500 hover:bg-gray-700 hover:shadow-blue-500/20 cursor-pointer">
-                                                        {getTechIcon(tag)}
-                                                    </div>
-
-                                                    {/* Tooltip */}
-                                                    <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-black text-white text-[10px] px-2 py-1 rounded whitespace-nowrap pointer-events-none border border-white/20 z-50">
-                                                        {tag}
-                                                    </div>
-                                                </motion.div>
-                                            </div>
-                                        )
-                                    })}
-                                </motion.div>
-
-                                {/* Center Object */}
-                                <div className="text-5xl z-10 transition-transform hover:scale-110 duration-300">
-                                    🚀
-                                </div>
-                            </div>
-                            <h3 className="text-xl font-bold uppercase tracking-widest mb-1 text-gray-500">Project</h3>
-                            <div className="text-5xl font-mono text-white font-bold">
-                                {String(currentIndex + 1).padStart(2, '0')}
-                            </div>
-                        </motion.div>
-                    </AnimatePresence>
-                </div>
+            <div className="mt-10 flex gap-3">
+              <button
+                onClick={prevProject}
+                className="grid h-11 w-11 place-items-center border border-[rgba(23,21,16,0.18)] transition-colors hover:border-[#df5b43] hover:text-[#df5b43]"
+                aria-label="Previous project"
+              >
+                <FiArrowLeft />
+              </button>
+              <button
+                onClick={nextProject}
+                className="grid h-11 w-11 place-items-center border border-[rgba(23,21,16,0.18)] transition-colors hover:border-[#df5b43] hover:text-[#df5b43]"
+                aria-label="Next project"
+              >
+                <FiArrowRight />
+              </button>
             </div>
+          </section>
 
-            <StarsMotion speed={1} count={250} radius={40} />
-        </motion.main>
-    );
-}
+          <section className="relative min-h-[520px] overflow-hidden bg-[#171510] p-5 text-[#f7eed9] md:p-8">
+            <div className="absolute left-8 top-8 h-24 w-24 rounded-full bg-[#df5b43]" />
+            <div className="absolute right-12 top-24 h-16 w-16 bg-[#d6a443]" />
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={image}
+                initial={{ opacity: 0, scale: 1.04 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.98 }}
+                transition={{ duration: 0.35 }}
+                className="relative z-10 h-full min-h-[460px] overflow-hidden border border-[#f7eed9]/15 bg-[#f7eed9]"
+              >
+                <Image src={image} alt={featured.title} fill className="object-cover grayscale mix-blend-multiply" />
+              </motion.div>
+            </AnimatePresence>
+          </section>
+        </div>
 
-// Helper to check if a tag is a valid tech tool for orbiting
-function isTechTool(tag: string) {
-    const lowerTag = tag.toLowerCase();
-    const excludeList = ["agentic ai", "simplifyai", "gemastik", "machine learning", "deep learning", "nlp", "computer vision", "generative ai", "capstone project", "llm"];
-    if (excludeList.some(excluded => lowerTag.includes(excluded))) return false;
-
-    // Explicit allow list or simple heuristic: must have a specific icon mapping
-    const hasIcon = getTechIcon(tag, true);
-    return hasIcon !== null;
-}
-
-// Icon Mapping Helper
-function getTechIcon(tag: string, checkOnly: boolean = false) {
-    const size = 20;
-    const lowerTag = tag.toLowerCase();
-
-    // Specific Techs
-    if (lowerTag.includes("python")) return checkOnly ? true : <SiPython size={size} className="text-yellow-400" />;
-    if (lowerTag.includes("next")) return checkOnly ? true : <SiNextdotjs size={size} className="text-white" />;
-    if (lowerTag.includes("react")) return checkOnly ? true : <SiReact size={size} className="text-blue-400" />;
-    if (lowerTag.includes("typescript")) return checkOnly ? true : <SiTypescript size={size} className="text-blue-600" />;
-    if (lowerTag.includes("tailwind")) return checkOnly ? true : <SiTailwindcss size={size} className="text-cyan-400" />;
-    if (lowerTag.includes("fastapi")) return checkOnly ? true : <SiFastapi size={size} className="text-teal-400" />;
-    if (lowerTag.includes("firebase")) return checkOnly ? true : <SiFirebase size={size} className="text-orange-500" />;
-    if (lowerTag.includes("langgraph") || lowerTag.includes("langchain")) return checkOnly ? true : <SiLangchain size={size} className="text-green-500" />;
-    if (lowerTag.includes("qdrant")) return checkOnly ? true : <FaDatabase size={size} className="text-pink-500" />;
-    if (lowerTag.includes("streamlit")) return checkOnly ? true : <SiStreamlit size={size} className="text-red-500" />;
-    if (lowerTag.includes("tensorflow") || lowerTag.includes("keras")) return checkOnly ? true : <SiTensorflow size={size} className="text-orange-500" />;
-    if (lowerTag.includes("torch") || lowerTag.includes("pytorch")) return checkOnly ? true : <SiPytorch size={size} className="text-red-600" />;
-    if (lowerTag.includes("huggingface")) return checkOnly ? true : <SiHuggingface size={size} className="text-yellow-500" />;
-    if (lowerTag.includes("meta") || lowerTag.includes("llama")) return checkOnly ? true : <SiMeta size={size} className="text-blue-500" />;
-    if (lowerTag.includes("google") || lowerTag.includes("gemini")) return checkOnly ? true : <SiGoogle size={size} className="text-white" />;
-    if (lowerTag.includes("docker")) return checkOnly ? true : <SiDocker size={size} className="text-blue-400" />;
-    if (lowerTag.includes("kubernetes")) return checkOnly ? true : <SiKubernetes size={size} className="text-blue-600" />;
-    if (lowerTag.includes("linux")) return checkOnly ? true : <SiLinux size={size} className="text-yellow-100" />;
-    if (lowerTag.includes("nvidia")) return checkOnly ? true : <SiNvidia size={size} className="text-green-500" />;
-    if (lowerTag.includes("scikit")) return checkOnly ? true : <SiScikitlearn size={size} className="text-orange-400" />;
-    if (lowerTag.includes("xgboost") || lowerTag.includes("lightgbm")) return checkOnly ? true : <FaMicrochip size={size} className="text-teal-300" />;
-    if (lowerTag.includes("indobert") || lowerTag.includes("bert")) return checkOnly ? true : <FaLayerGroup size={size} className="text-indigo-400" />;
-
-    // Only return generic icons if NOT checking for specific tools
-    // This effectively filters out "Machine Learning", "AI", etc from orbiting
-    // by returning null if we are in 'checkOnly' mode and it didn't match specific tools above
-    if (checkOnly) return null;
-
-    // Fallbacks for display purposes if needed (but we filter these out for orbit)
-    return <FaCode size={size} className="text-gray-400" />;
+        <div className="mt-10 grid gap-4 md:grid-cols-5">
+          {archive.map((project, index) => (
+            <button
+              key={project.slug}
+              onClick={() => setCurrentIndex(index)}
+              className="group text-left"
+            >
+              <div className="paper-card mb-3 aspect-[4/3] overflow-hidden p-2 transition-transform group-hover:-translate-y-1">
+                <div className="relative h-full w-full overflow-hidden bg-[#f7eed9]">
+                  <Image
+                    src={visualMap[project.slug] ?? "/og-projects.PNG"}
+                    alt={project.title}
+                    fill
+                    className="object-cover grayscale mix-blend-multiply"
+                  />
+                </div>
+              </div>
+              <p className="font-mono text-[10px] text-[#df5b43]">0{index + 1}</p>
+              <p className="mt-1 line-clamp-2 text-sm font-black leading-tight">{project.title}</p>
+            </button>
+          ))}
+        </div>
+      </div>
+    </main>
+  )
 }

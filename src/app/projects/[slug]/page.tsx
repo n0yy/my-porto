@@ -62,7 +62,7 @@ export default async function Page({
   }
 
   return (
-    <main className="prose prose-headings:font-semibold prose-headings:text-white prose-h1:4xl md:prose-h1:text-5xl prose-h2:text-base md:prose-h2:text-xl dark:prose-h2:text-gray-400 prose-p:text-gray-300 prose-strong:text-white prose-ul:text-gray-300 w-full flex mx-auto flex-col mt-10 prose-h2:-mt-7 mb-28 prose-a:text-blue-500 prose-ul:-mt-3 px-10 md:px-0 prose-h4:font-sans prose-h4:text-lg prose-ol:-mt-3 z-10 prose-img:rounded-lg prose-img:shadow-lg prose-img:shadow-gray-950 prose-img:-mt-0 prose-h3:font-sans prose-ol:text-gray-300 ">
+    <main className="prose prose-stone mx-auto mb-28 mt-28 flex w-full max-w-3xl flex-col px-6 prose-headings:font-black prose-headings:tracking-[-0.04em] prose-h1:text-5xl prose-h1:leading-none prose-h2:mt-12 prose-h2:border-t prose-h2:border-[rgba(23,21,16,0.16)] prose-h2:pt-8 prose-p:text-[rgba(23,21,16,0.68)] prose-p:leading-8 prose-strong:text-[#171510] prose-a:text-[#df5b43] prose-ul:text-[rgba(23,21,16,0.68)] prose-ol:text-[rgba(23,21,16,0.68)] prose-img:border prose-img:border-[rgba(23,21,16,0.16)] prose-img:bg-[#f2ead8]">
       <Content />
     </main>
   )

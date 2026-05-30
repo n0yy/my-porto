@@ -1,72 +1,74 @@
-"use client";
+"use client"
 
-import { useColor } from "@/context/Colors";
-import { useMotionTemplate, motion } from "framer-motion";
-import Image from "next/image";
-import dynamic from 'next/dynamic';
-import Link from "next/link";
+import Image from "next/image"
+import Link from "next/link"
+import { motion } from "framer-motion"
+import { FiArrowUpRight, FiMail } from "react-icons/fi"
 
-const StarsMotion = dynamic(() => import("@/components/Stars"), { ssr: false });
-
-const socialMedia = [
-  {
-    name: "LinkedIn",
-    url: "https://www.linkedin.com/in/danang-hapis-fadillah-682878202/",
-    urlImage: "/linkedin.svg",
-  },
-  {
-    name: "Instagram",
-    url: "https://www.instagram.com/nangdosan",
-    urlImage: "/ig.svg",
-  },
-  {
-    name: "Twitter",
-    url: "https://x.com/DeepSee158619",
-    urlImage: "/x.svg",
-  },
-];
-
+const contacts = [
+  ["LinkedIn", "https://www.linkedin.com/in/danang-hapis-fadillah-682878202/"],
+  ["GitHub", "https://github.com/n0yy"],
+  ["Email", "mailto:danangpostman37@gmail.com"],
+]
 
 export default function Contact() {
-  const color = useColor();
-  const border = useMotionTemplate`1px solid ${color}`;
-  const textShadow = useMotionTemplate`0px 5px 0px ${color}`;
-
   return (
-    <motion.main className="relative pt-10 md:pt-28 min-h-screen flex flex-col items-center justify-center md:justify-start 2xl:justify-center 2xl:pb-24 overflow-hidden pb-28 md:pb-0 bg-gray-950 text-gray-200 z-10">
-      <h1 className="text-5xl md:text-7xl w-11/12 md:w-8/12 font-semibold text-center">
-        <motion.span style={{ textShadow }}>Let&apos;s Connect</motion.span>
-        <br />
-        and Build the Future Together
-      </h1>
-      <Link
-        href="mailto:danangpostman37@gmail.com"
-        className=" mt-10 no-underline hover:no-underline"
-      >
-        <motion.div
-          className="items-center gap-2 text-current inline-block px-7 py-1 rounded-full cursor-pointer"
-          style={{
-            border,
-          }}
-          whileHover={{
-            scale: 1.05,
-            transition: { duration: 0.2 }
-          }}
-          whileTap={{ scale: 0.95 }}
-        >
-          <span>Send Mail</span>
-        </motion.div>
-      </Link>
-      <span className="px-3 my-5">OR</span>
-      {/* Social Media */}
-      <div className="flex space-x-5 text-white items-center">
-        {socialMedia.map((media, index) => (
-          <Link href={media.url} key={index} target="_blank" className="group ">
-            <Image src={media.urlImage} width={24} height={24} alt={media.name} className="cursor-pointer hover:scale-110 transition duration-200" />
-          </Link>
-        ))}
+    <main className="section-rule py-20 md:py-28">
+      <div className="od-container">
+        <div className="grid gap-12 md:grid-cols-[1fr_0.78fr] md:items-center">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <p className="eyebrow mb-5">04 / Contact</p>
+            <h2 className="poster-title max-w-4xl text-[clamp(3.8rem,8.8vw,8.5rem)] leading-[0.8]">
+              Let&apos;s build AI that works in the <span className="serif-ish lowercase">real world</span>.
+            </h2>
+            <p className="mt-7 max-w-xl text-lg leading-8 text-[rgba(23,21,16,0.66)]">
+              Bring a messy AI workflow, a product idea, or a system that needs sharper thinking. I can help turn it
+              into an interface, pipeline, and delivery plan that holds up under real use.
+            </p>
+
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Link href="mailto:danangpostman37@gmail.com" className="coral-pill inline-flex w-fit items-center gap-2 px-5 py-3 text-sm font-bold">
+                <FiMail /> Send mail
+              </Link>
+              <Link href="/Danang's Resume.pdf" target="_blank" className="inline-flex w-fit items-center gap-2 border border-[rgba(23,21,16,0.18)] px-5 py-3 text-sm font-bold hover:border-[#df5b43] hover:text-[#df5b43]">
+                Download resume <FiArrowUpRight />
+              </Link>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, rotate: 2, y: 18 }}
+            whileInView={{ opacity: 1, rotate: 0, y: 0 }}
+            viewport={{ once: true }}
+            className="paper-card relative aspect-square overflow-hidden p-6"
+          >
+            <div className="absolute left-10 top-8 h-28 w-28 rounded-full bg-[#df5b43]" />
+            <Image src="/me.jpg" alt="Danang portrait" fill className="object-cover object-top grayscale mix-blend-multiply mask-image-gradient" />
+            <div className="absolute bottom-6 left-6 right-6 border border-[rgba(23,21,16,0.16)] bg-[#f7eed9]/80 p-4 backdrop-blur-sm">
+              <p className="eyebrow mb-2">Available for</p>
+              <p className="text-sm font-bold leading-5">AI engineering, RAG/agent systems, and product implementation collaborations.</p>
+            </div>
+          </motion.div>
+        </div>
+
+        <div className="mt-16 grid border-y border-[rgba(23,21,16,0.16)] md:grid-cols-3">
+          {contacts.map(([label, href]) => (
+            <Link
+              key={label}
+              href={href}
+              target={href.startsWith("http") ? "_blank" : undefined}
+              className="group flex items-center justify-between border-[rgba(23,21,16,0.16)] px-0 py-5 text-lg font-black md:border-r md:px-6 last:md:border-r-0"
+            >
+              {label}
+              <FiArrowUpRight className="transition-transform group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-[#df5b43]" />
+            </Link>
+          ))}
+        </div>
       </div>
-      <StarsMotion count={75} speed={0.5} radius={50} />
-    </motion.main>
-  );
+    </main>
+  )
 }

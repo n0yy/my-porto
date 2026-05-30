@@ -1,11 +1,11 @@
-import { Syne, Outfit } from "next/font/google";
+import { Archivo_Black, Syne, Outfit } from "next/font/google";
 import "./globals.css";
-import { ColorProvider } from "../context/Colors";
 import Navbar from "../components/Navbar";
 import { Metadata } from 'next';
 
 const syne = Syne({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800"], variable: '--font-syne' });
 const outfit = Outfit({ subsets: ["latin"], weight: ["300", "400", "500", "600"], variable: '--font-outfit' });
+const archivoBlack = Archivo_Black({ subsets: ["latin"], weight: "400", variable: "--font-poster" });
 
 import Script from "next/script";
 
@@ -72,17 +72,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${syne.variable} ${outfit.variable} font-sans antialiased`}
+        className={`${syne.variable} ${outfit.variable} ${archivoBlack.variable} font-sans antialiased`}
       >
         <Script
           id="json-ld"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <ColorProvider>
-          {children}
-          <Navbar />
-        </ColorProvider>
+        {children}
+        <Navbar />
       </body>
     </html>
   );

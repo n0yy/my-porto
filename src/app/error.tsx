@@ -15,23 +15,18 @@ export default function Error({
     }, [error])
 
     return (
-        <div className="min-h-screen bg-gray-950 flex flex-col items-center justify-center p-6 text-center">
+        <div className="min-h-screen px-6 py-28">
             <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 18 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="max-w-md"
+                className="od-container max-w-3xl border-t border-[rgba(23,21,16,0.16)] pt-16"
             >
-                <div className="text-6xl mb-6">⚠️</div>
-                <h2 className="text-3xl font-bold text-white mb-4 italic font-serif">
-                    Something went wrong!
-                </h2>
-                <p className="text-gray-400 mb-8 leading-relaxed">
-                    An unexpected error occurred. Don't worry, it's not you, it's probably the AI acting up.
+                <p className="eyebrow mb-5">Runtime error</p>
+                <h1 className="text-6xl font-black leading-none md:text-8xl">Something broke in the build loop.</h1>
+                <p className="mt-6 max-w-lg text-lg leading-8 text-[rgba(23,21,16,0.66)]">
+                    The app hit an unexpected state. Try the render again.
                 </p>
-                <button
-                    onClick={() => reset()}
-                    className="px-8 py-3 bg-white text-black font-bold rounded-full hover:bg-blue-500 hover:text-white transition-all transform hover:scale-105"
-                >
+                <button onClick={() => reset()} className="coral-pill mt-8 px-5 py-3 text-sm font-bold">
                     Try again
                 </button>
             </motion.div>
