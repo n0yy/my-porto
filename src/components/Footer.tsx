@@ -4,7 +4,7 @@ import Link from "next/link"
 
 const columns = [
     ["Navigation", [["Home", "#home"], ["Systems", "#about"], ["Archive", "#projects"], ["Contact", "#contact"]]],
-    ["Focus", [["Agentic AI", "#about"], ["RAG Systems", "#about"], ["ML Products", "#projects"], ["Next.js", "#projects"]]],
+    ["Focus", [["AI Engineering", "#about"], ["RAG Systems", "#about"], ["Web Development", "#projects"]]],
     ["Connect", [["GitHub", "https://github.com/n0yy"], ["LinkedIn", "https://www.linkedin.com/in/danang-hapis-fadillah-682878202/"], ["Email", "mailto:danangpostman37@gmail.com"]]],
 ]
 
@@ -12,7 +12,7 @@ export default function Footer() {
     const currentYear = new Date().getFullYear()
 
     return (
-        <footer className="bg-[#171510] py-14 text-[#f7eed9] px-3">
+        <footer className="bg-[#171510] py-14 text-[#f7eed9] px-3 -mx-7">
             <div className="od-container">
                 <div className="grid gap-12 md:grid-cols-[1.2fr_1.8fr]">
                     <div>
@@ -21,8 +21,8 @@ export default function Footer() {
                             <p className="font-black tracking-[-0.04em]">Danang Hapis Fadillah</p>
                         </div>
                         <p className="max-w-sm text-sm leading-6 text-[#f7eed9]/62">
-                            AI Engineer building systems that move from signals to software, from prototypes to reliable
-                            delivery loops.
+                            AI Engineer focused on reliable AI applications, RAG systems, and production-ready web
+                            development.
                         </p>
                     </div>
 
@@ -44,9 +44,8 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <div className="mt-12 flex flex-col justify-between gap-3 border-t border-[#f7eed9]/12 pt-6 font-mono text-[10px] uppercase tracking-[0.16em] text-[#f7eed9]/45 md:flex-row">
+                <div className="mt-12 border-t border-[#f7eed9]/12 pt-6 font-mono text-[10px] uppercase tracking-[0.16em] text-[#f7eed9]/45 md:flex-row">
                     <p>Copyright {currentYear}</p>
-                    <p>Built with Next.js, Tailwind, and deliberate restraint.</p>
                 </div>
             </div>
         </footer>

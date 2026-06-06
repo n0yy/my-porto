@@ -2,36 +2,50 @@ import { Archivo_Black, Syne, Outfit } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/Navbar";
 import { Metadata } from 'next';
+import { absoluteUrl, serializeJsonLd, siteConfig } from "@/lib/site";
 
 const syne = Syne({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800"], variable: '--font-syne' });
 const outfit = Outfit({ subsets: ["latin"], weight: ["300", "400", "500", "600"], variable: '--font-outfit' });
 const archivoBlack = Archivo_Black({ subsets: ["latin"], weight: "400", variable: "--font-poster" });
 
-import Script from "next/script";
-
 export const metadata: Metadata = {
-  metadataBase: new URL('https://hapeace.vercel.app'),
+  metadataBase: new URL(siteConfig.url),
   title: {
     default: "Danang Hapis Fadillah | AI Engineer Portfolio",
     template: "%s | Danang Hapis Fadillah"
   },
-  description: "Portfolio of Danang Hapis Fadillah, an AI Engineer specializing in Machine Learning, Generative AI, and Web Development.",
-  keywords: ["AI Engineer", "Machine Learning", "Generative AI", "Fullstack Developer", "Portfolio", "Danang Hapis Fadillah"],
+  description: siteConfig.description,
+  keywords: ["AI Engineer", "RAG Systems", "Retrieval-Augmented Generation", "Web Developer", "Next.js", "Portfolio", "Danang Hapis Fadillah"],
   authors: [{ name: "Danang Hapis Fadillah" }],
   creator: "Danang Hapis Fadillah",
+  publisher: "Danang Hapis Fadillah",
+  category: "technology",
+  alternates: {
+    canonical: "/",
+    languages: {
+      "en-US": "/",
+    },
+  },
   openGraph: {
-    title: "Danang Hapis Fadillah | AI Engineer",
-    description: "Specializing in Agentic AI, RAG systems, and Scalable Machine Learning.",
-    url: 'https://hapeace.vercel.app',
+    title: siteConfig.title,
+    description: siteConfig.description,
+    url: siteConfig.url,
     siteName: 'Danang Hapis Fadillah Portfolio',
     locale: 'en_US',
     type: 'website',
+    images: [{
+      url: "/og-home.PNG",
+      width: 1363,
+      height: 644,
+      alt: "Danang Hapis Fadillah - AI Engineer Portfolio",
+    }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Danang Hapis Fadillah | AI Engineer",
-    description: "Specializing in Agentic AI, RAG systems, and Scalable Machine Learning.",
+    title: siteConfig.title,
+    description: siteConfig.description,
     creator: '@hapeace',
+    images: ["/og-home.PNG"],
   },
   robots: {
     index: true,
@@ -47,20 +61,32 @@ export const metadata: Metadata = {
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
   },
 };
 
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'Person',
-  name: 'Danang Hapis Fadillah',
-  url: 'https://hapeace.vercel.app',
-  jobTitle: 'AI Engineer',
-  description: 'Specializing in Agentic AI, RAG systems, and Scalable Machine Learning.',
-  sameAs: [
-    'https://github.com/n0yy',
-    'https://www.linkedin.com/in/danang-hapis-fadillah-682878202/',
+  '@graph': [
+    {
+      '@type': 'Person',
+      '@id': `${siteConfig.url}/#person`,
+      name: siteConfig.name,
+      url: siteConfig.url,
+      image: absoluteUrl("/me.jpg"),
+      jobTitle: 'AI Engineer',
+      description: siteConfig.description,
+      knowsAbout: ['AI Engineering', 'Retrieval-Augmented Generation', 'Web Development', 'LangGraph', 'Next.js', 'FastAPI'],
+      sameAs: [siteConfig.github, siteConfig.linkedin],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${siteConfig.url}/#website`,
+      url: siteConfig.url,
+      name: `${siteConfig.name} Portfolio`,
+      description: siteConfig.description,
+      inLanguage: 'en-US',
+      author: { '@id': `${siteConfig.url}/#person` },
+    },
   ],
 };
 
@@ -74,10 +100,9 @@ export default function RootLayout({
       <body
         className={`${syne.variable} ${outfit.variable} ${archivoBlack.variable} font-sans antialiased mx-5 md:mx-0`}
       >
-        <Script
-          id="json-ld"
+        <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
         />
         {children}
         <Navbar />

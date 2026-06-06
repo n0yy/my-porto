@@ -4,20 +4,22 @@ import About from "@/components/pages/About";
 import Projects from "@/components/pages/Project";
 import Contact from "@/components/pages/Contact";
 import Footer from "@/components/Footer";
+import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Danang Hapis Fadillah | AI Engineer",
-  description: "AI Engineer at SimplifyAI specializing in Agentic AI, RAG systems, and Scalable Machine Learning solutions.",
-  keywords: ['AI Engineer', 'ML Engineer', 'Agentic AI', 'Generative AI', 'Next.js', 'SimplifyAI', 'LangGraph'],
+  title: { absolute: siteConfig.title },
+  description: siteConfig.description,
+  alternates: { canonical: "/" },
+  keywords: ['AI Engineer', 'RAG Systems', 'Retrieval-Augmented Generation', 'Web Developer', 'Next.js', 'FastAPI', 'LangGraph'],
   openGraph: {
     title: "Danang Hapis Fadillah | AI Engineer",
-    description: 'AI Engineer specializing in Agentic AI, RAG systems, and Scalable Machine Learning.',
-    url: 'https://hapeace.vercel.app',
+    description: siteConfig.description,
+    url: '/',
     images: [
       {
-        url: 'https://hapeace.vercel.app/og-home.png',
-        width: 800,
-        height: 600,
+        url: '/og-home.PNG',
+        width: 1363,
+        height: 644,
         alt: 'Danang Hapis Fadillah',
       },
     ],

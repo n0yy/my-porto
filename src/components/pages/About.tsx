@@ -8,18 +8,18 @@ import { SiFastapi, SiLangchain, SiNextdotjs, SiPython, SiPytorch, SiReact, SiTe
 const systems = [
   {
     icon: FiGitBranch,
-    title: "Agentic workflows",
-    copy: "Multi-step AI agents with task planning, tool routing, guarded execution, and human-readable traces.",
+    title: "AI Engineering",
+    copy: "Production AI applications with LLM orchestration, tool use, evaluation, APIs, and observable execution.",
   },
   {
     icon: FiDatabase,
-    title: "Retrieval systems",
+    title: "RAG Systems",
     copy: "RAG stacks that respect source context, retrieval quality, latency, and maintainable evaluation loops.",
   },
   {
     icon: FiLayers,
-    title: "Product interfaces",
-    copy: "Next.js and FastAPI surfaces that make complex AI behavior feel direct, observable, and usable.",
+    title: "Web Development",
+    copy: "Fast, accessible Next.js and React interfaces backed by maintainable APIs and production-ready architecture.",
   },
 ]
 
@@ -59,9 +59,8 @@ export default function About() {
               viewport={{ once: true }}
               className="max-w-2xl text-xl leading-9 text-[rgba(23,21,16,0.68)]"
             >
-              My work sits between model behavior, software architecture, and product experience. I build the
-              invisible plumbing around LLMs: retrieval, orchestration, validation, APIs, and interfaces that make
-              teams trust what the AI is doing.
+              My focus spans AI engineering, RAG systems, and web development. I connect retrieval, orchestration,
+              validation, APIs, and product interfaces into reliable software that teams can understand and use.
             </motion.p>
 
             <div className="grid gap-4 md:grid-cols-3">
@@ -108,8 +107,8 @@ export default function About() {
           {[
             ["2+", "years building applied AI"],
             ["10+", "portfolio-grade systems"],
-            ["5", "domains across data, web, and ML"],
-            ["1", "focus: usable intelligence"],
+            ["3", "focus areas: AI, RAG, and web"],
+            ["1", "goal: useful production systems"],
           ].map(([value, label]) => (
             <div key={label} className="border-t border-[rgba(23,21,16,0.16)] pt-5">
               <p className="mb-2 font-mono text-4xl text-[#df5b43]">{value}</p>

@@ -4,9 +4,10 @@ import About from "@/components/pages/About";
 export const metadata: Metadata = {
     title: "About",
     description:
-      "Discover more about Danang Hapis Fadillah, an AI professional with extensive expertise in machine learning technologies, NLP, and generative AI.",
+      "Discover Danang Hapis Fadillah's work across AI Engineering, RAG Systems, and Web Development.",
     keywords: [
       "AI Engineer",
+      "RAG Systems",
       "Web Developer",
       "Machine Learning",
       "Natural Language Processing",
@@ -14,16 +15,17 @@ export const metadata: Metadata = {
       "Bangkit Academy",
       "Danang Hapis Fadillah",
     ],
+    alternates: { canonical: "/about" },
     openGraph: {
       title: "About",
       description:
-        "Danang Hapis Fadillah is an AI professional passionate about innovation and creating impactful AI-driven solutions.",
+        "Danang Hapis Fadillah builds reliable AI applications, RAG systems, and production-ready web experiences.",
       url: "https://hapeace.vercel.app/about",
       images: [
         {
-          url: "https://hapeace.vercel.app/og-about.png",
-          width: 800,
-          height: 600,
+          url: "/og-about.PNG",
+          width: 1361,
+          height: 644,
           alt: "About Danang Hapis Fadillah",
         },
       ],

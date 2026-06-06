@@ -6,9 +6,9 @@ import { motion } from "framer-motion"
 import { FiArrowUpRight } from "react-icons/fi"
 
 const metrics = [
-  ["01", "Agentic product systems"],
-  ["02", "Retrieval with traceability"],
-  ["03", "Interfaces for real teams"],
+  ["01", "AI Engineering"],
+  ["02", "RAG Systems"],
+  ["03", "Web Development"],
 ]
 
 export default function Home() {
@@ -25,16 +25,16 @@ export default function Home() {
             <div>
               <div className="mb-5 flex items-center gap-3">
                 <span className="h-px w-10 bg-[#df5b43]" />
-                <p className="eyebrow">AI engineer / product systems</p>
+                <p className="eyebrow">AI Engineering / RAG Systems / Web Development</p>
               </div>
 
-              <h1 className="poster-title max-w-[720px] text-[clamp(3.8rem,9vw,8.4rem)] leading-[0.82]">
+              <h1 className="poster-title max-w-[720px] text-[clamp(3.2rem,9vw,5.4rem)] leading-[0.82]">
                 Build AI that feels <span className="serif-ish lowercase">alive</span>, legible, and useful.
               </h1>
 
               <p className="mt-7 max-w-[560px] text-lg leading-8 text-[rgba(23,21,16,0.68)] md:text-xl">
-                I am Danang Hapis Fadillah, an AI Engineer at SimplifyAI Indonesia crafting agentic workflows,
-                retrieval systems, and production interfaces for teams that need AI to become a real operating layer.
+                I am Danang Hapis Fadillah, an AI Engineer at SimplifyAI Indonesia building reliable AI applications,
+                context-aware RAG systems, and production-ready web experiences.
               </p>
             </div>
 
@@ -65,6 +65,7 @@ export default function Home() {
                 src="/me.jpg"
                 alt="Danang Hapis Fadillah"
                 fill
+                sizes="(min-width: 768px) 46vw, 100vw"
                 className="object-cover object-top grayscale contrast-110 mix-blend-multiply mask-image-gradient"
                 priority
               />
@@ -73,7 +74,8 @@ export default function Home() {
             <div className="paper-card absolute -bottom-5 left-6 w-56 p-4 md:left-8">
               <p className="eyebrow mb-3">Current focus</p>
               <p className="text-sm leading-6">
-                Turning SDLC knowledge into AI systems that can reason, retrieve, and execute with traceability.
+                Building AI products where retrieval quality, backend reliability, and thoughtful web interfaces work
+                as one system.
               </p>
             </div>
 

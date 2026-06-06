@@ -50,7 +50,7 @@ export async function GET(req: NextRequest) {
                         {title}
                     </div>
                     <div style={{ fontSize: 24, color: '#9ca3af', marginTop: 30 }}>
-                        AI Engineer | Machine Learning | Web Development
+                        AI Engineering | RAG Systems | Web Development
                     </div>
                 </div>
             </div>

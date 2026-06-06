@@ -4,17 +4,18 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Get in touch with Danang Hapis Fadillah. Connect via LinkedIn, Instagram, or Twitter to collaborate and build the future together.",
+    "Contact me to collaborate on AI engineering, RAG systems, and web development.",
+  alternates: { canonical: "/contact" },
   openGraph: {
     title: "Contact",
     description:
-      "Get in touch with Danang Hapis Fadillah. Connect via LinkedIn, Instagram, or Twitter to collaborate and build the future together.",
+      "Contact me to collaborate on AI engineering, RAG systems, and web development.",
     url: "https://hapeace.vercel.app/contact",
     images: [
       {
-        url: "https://hapeace.vercel.app/og-contact.png",
-        width: 800,
-        height: 600,
+        url: "/og-contact.PNG",
+        width: 1359,
+        height: 649,
         alt: "Danang Hapis Fadillah Profile Picture",
       },
     ],
@@ -24,8 +25,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Contact",
     description:
-      "Get in touch with Danang Hapis Fadillah. Connect via LinkedIn, Instagram, or Twitter to collaborate and build the future together.",
-    images: ["https://hapeace.vercel.app/og-contact.png"],
+      "Contact me to collaborate on AI engineering, RAG systems, and web development.",
+    images: ["/og-contact.PNG"],
   },
   icons: {
     icon: "/favicon.ico",

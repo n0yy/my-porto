@@ -22,12 +22,12 @@ export default function Contact() {
             viewport={{ once: true }}
           >
             <p className="eyebrow mb-5">04 / Contact</p>
-            <h2 className="poster-title max-w-4xl text-[clamp(3.8rem,8.8vw,8.5rem)] leading-[0.8]">
+            <h2 className="poster-title max-w-4xl text-[clamp(3.8rem,5.8vw,6.5rem)] leading-[0.8]">
               Let&apos;s build AI that works in the <span className="serif-ish lowercase">real world</span>.
             </h2>
             <p className="mt-7 max-w-xl text-lg leading-8 text-[rgba(23,21,16,0.66)]">
-              Bring a messy AI workflow, a product idea, or a system that needs sharper thinking. I can help turn it
-              into an interface, pipeline, and delivery plan that holds up under real use.
+              Bring an AI workflow, a knowledge-heavy product, or a web application that needs sharper engineering. I
+              can help turn it into a reliable RAG pipeline, API, and interface that holds up under real use.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -47,10 +47,16 @@ export default function Contact() {
             className="paper-card relative aspect-square overflow-hidden p-6"
           >
             <div className="absolute left-10 top-8 h-28 w-28 rounded-full bg-[#df5b43]" />
-            <Image src="/me.jpg" alt="Danang portrait" fill className="object-cover object-top grayscale mix-blend-multiply mask-image-gradient" />
+            <Image
+              src="/me.jpg"
+              alt="Danang Hapis Fadillah, AI Engineer"
+              fill
+              sizes="(min-width: 768px) 44vw, 100vw"
+              className="object-cover object-top grayscale mix-blend-multiply mask-image-gradient"
+            />
             <div className="absolute bottom-6 left-6 right-6 border border-[rgba(23,21,16,0.16)] bg-[#f7eed9]/80 p-4 backdrop-blur-sm">
               <p className="eyebrow mb-2">Available for</p>
-              <p className="text-sm font-bold leading-5">AI engineering, RAG/agent systems, and product implementation collaborations.</p>
+              <p className="text-sm font-bold leading-5">AI engineering, RAG systems, and web development collaborations.</p>
             </div>
           </motion.div>
         </div>

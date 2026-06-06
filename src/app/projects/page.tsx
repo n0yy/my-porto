@@ -4,7 +4,7 @@ import Projects from "@/components/pages/Project";
 export const metadata: Metadata = {
   title: "Projects",
   description:
-    "Explore a curated selection of projects showcasing expertise in web development and AI. Highlights include innovative solutions in machine learning, generative AI, and responsive design.",
+    "Explore AI engineering, RAG system, machine learning, and full-stack web development projects by Danang Hapis Fadillah.",
   keywords: [
     "AI Projects",
     "Web Development",
@@ -16,16 +16,17 @@ export const metadata: Metadata = {
     "BERT",
     "LLAMA",
   ],
+  alternates: { canonical: "/projects" },
   openGraph: {
     title: "Projects",
     description:
-      "Showcasing a continuous journey in web development and AI, featuring innovative solutions in technology and design.",
-    url: "https://dananghapis.dev/projects",
+      "AI engineering, RAG system, machine learning, and full-stack web development case studies.",
+    url: "/projects",
     images: [
       {
-        url: "/og-projects.png", // Simplified path, metadataBase will handle it
-        width: 1200,
-        height: 630,
+        url: "/og-projects.PNG",
+        width: 1361,
+        height: 645,
         alt: "Projects Overview - Danang Hapis Fadillah",
       },
     ],
@@ -34,7 +35,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Projects - Danang Hapis Fadillah",
     description:
-      "Discover projects that demonstrate advanced skills in AI and web development. A showcase of innovation and creativity.",
+      "Explore AI engineering, RAG system, machine learning, and full-stack web development case studies.",
+    images: ["/og-projects.PNG"],
   },
 };
 

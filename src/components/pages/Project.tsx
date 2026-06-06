@@ -7,22 +7,10 @@ import { AnimatePresence, motion } from "framer-motion"
 import { FiArrowLeft, FiArrowRight, FiArrowUpRight } from "react-icons/fi"
 import { projects } from "@/DataProjects"
 
-const visualMap: Record<string, string> = {
-  "agentic-xtractor": "/xtractor.png",
-  "bejo-app-rag-system": "/bejo.png",
-  "predictive-maintenance-system": "/predictive.png",
-  "gemastik-2024-sentiment-analysis": "/ristek.PNG",
-  "from-fundamentals-to-generative-ai-excellence": "/bangkit.jfif",
-  "developed-a-nextjs-application-integrating-llm": "/og-projects.PNG",
-  "intersim-ai": "/hf.PNG",
-  "traffic-congestion-prediction-model": "/og-home.PNG",
-  "sdlc-ai": "/sdlc-ai.png",
-}
-
 export default function Projects() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const featured = projects[currentIndex]
-  const image = visualMap[featured.slug] ?? "/og-projects.PNG"
+  const image = featured.image
 
   const archive = useMemo(() => projects.slice(0, 5), [])
 
@@ -35,13 +23,13 @@ export default function Projects() {
         <div className="mb-12 grid gap-8 md:grid-cols-[0.95fr_1.05fr] md:items-end">
           <div>
             <p className="eyebrow mb-5">03 / Work archive</p>
-            <h2 className="poster-title text-[clamp(3.6rem,8vw,7.6rem)] leading-[0.82]">
+            <h2 className="poster-title text-[clamp(3.6rem,5vw,5.6rem)] leading-[0.82]">
               AI systems with receipts, interfaces, and <span className="serif-ish lowercase">working edges</span>.
             </h2>
           </div>
           <p className="max-w-xl text-lg leading-8 text-[rgba(23,21,16,0.66)]">
-            Selected work across agentic extraction, modular RAG, interview simulation, predictive maintenance,
-            sentiment analysis, and SDLC-focused AI. The common thread: make intelligence inspectable.
+            Selected work across AI engineering, modular RAG, and full-stack web development, from document
+            intelligence to SDLC tooling. The common thread: make intelligence useful and inspectable.
           </p>
         </div>
 
@@ -108,7 +96,13 @@ export default function Projects() {
                 transition={{ duration: 0.35 }}
                 className="relative z-10 h-full min-h-[460px] overflow-hidden border border-[#f7eed9]/15 bg-[#f7eed9]"
               >
-                <Image src={image} alt={featured.title} fill className="object-cover grayscale mix-blend-multiply" />
+                <Image
+                  src={image}
+                  alt={featured.title}
+                  fill
+                  sizes="(min-width: 768px) 55vw, 100vw"
+                  className="object-cover grayscale mix-blend-multiply"
+                />
               </motion.div>
             </AnimatePresence>
           </section>
@@ -124,9 +118,10 @@ export default function Projects() {
               <div className="paper-card mb-3 aspect-[4/3] overflow-hidden p-2 transition-transform group-hover:-translate-y-1">
                 <div className="relative h-full w-full overflow-hidden bg-[#f7eed9]">
                   <Image
-                    src={visualMap[project.slug] ?? "/og-projects.PNG"}
+                    src={project.image}
                     alt={project.title}
                     fill
+                    sizes="(min-width: 768px) 33vw, 100vw"
                     className="object-cover grayscale mix-blend-multiply"
                   />
                 </div>

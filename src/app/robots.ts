@@ -1,12 +1,13 @@
 import { MetadataRoute } from 'next'
+import { siteConfig } from '@/lib/site'
 
 export default function robots(): MetadataRoute.Robots {
     return {
         rules: {
             userAgent: '*',
             allow: '/',
-            disallow: '/private/',
         },
-        sitemap: 'https://hapeace.vercel.app/sitemap.xml',
+        sitemap: `${siteConfig.url}/sitemap.xml`,
+        host: siteConfig.url,
     }
 }

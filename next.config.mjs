@@ -4,6 +4,11 @@ import createMDX from "@next/mdx";
 
 const nextConfig = {
     pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
+    poweredByHeader: false,
+    compress: true,
+    turbopack: {
+        root: process.cwd(),
+    },
 };
 
 const withMDX = createMDX({
